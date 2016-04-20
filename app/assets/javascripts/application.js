@@ -15,7 +15,7 @@ $(function() {
       url: '/user/tasks/' + id + '/change_state',
         data: {
           task: {
-            state: this.value,
+            state: this.value
           }
         },
         dataType: "json"
