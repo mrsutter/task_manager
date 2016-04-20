@@ -4,3 +4,8 @@
 
 ## Heroku
   Проект доступен по [ссылке](https://yakspavel-task-manager.herokuapp.com)
+
+## Учетные записи
+
+  * *user@tm.com/123456* - пользователь
+  * *admin@tm.com/admin_tm* - админ
