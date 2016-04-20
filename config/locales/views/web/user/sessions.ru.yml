@@ -1,0 +1,8 @@
+ru:
+  web:
+    user:
+      sessions:
+        new:
+          authorization: Авторизация
+          registration: Регистрация
+          sign_in: Войти

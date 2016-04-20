@@ -1,0 +1,14 @@
+base: &base
+  adapter: postgresql
+  encoding: utf-8
+  pool: 5
+  password:
+  username: postgres
+
+development:
+  <<: *base
+  database: task_manager_dev
+
+test:
+  <<: *base
+  database: task_manager_test

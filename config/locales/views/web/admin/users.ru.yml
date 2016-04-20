@@ -1,0 +1,17 @@
+ru:
+  web:
+    admin:
+      users:
+        index:
+          all_users: Все пользователи
+          no_users: Пока вы единственный пользователь
+          destroy_confirmation: Удалить пользователя?
+        show:
+          user_title: 'Пользователь #%{user_id}'
+          edit: Редактировать
+          destroy: Удалить
+          destroy_confirmation: Удалить пользователя?
+        form:
+          user_title: 'Пользователь #%{user_id}'
+          new_user: Новый пользователь
+          submit: Сохранить

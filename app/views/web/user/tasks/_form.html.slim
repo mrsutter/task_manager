@@ -1,0 +1,22 @@
+.col-md-offset-4.col-md-4
+  = simple_form_for model_instance, url: url, method: method do |f|
+    .panel.panel-default
+      .panel-heading
+        h3.panel-title
+          - if model_instance.new_record?
+            = t('.new_task')
+          - else
+            = t('.task_title', task_id: model_instance.id)
+      .panel-body
+          = f.input :name, label: Task.human_attribute_name(:name)
+          = f.input :description, label: Task.human_attribute_name(:description), input_html: { rows: 4, cols: 50 }
+          - if current_user.admin?
+            = f.input :user_id, as: :select, label: t('.assign_to'), collection: User.all, label_method: :email, value_method: :id, input_html: { class: 'chosen-select' }
+          - if model_instance.persisted?
+            = f.input :state, label: Task.human_attribute_name(:state), collection: Task.aasm.states_for_select,
+              input_html: { class: 'chosen-select' }
+          .text-center
+            = f.file_field :file
+
+          .pull-right
+            = f.button :submit, t('.submit'), class: 'btn btn-success'

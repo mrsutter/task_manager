@@ -1,0 +1,38 @@
+h4.text-center= t('.all_tasks')
+.row
+  .col-md-offset-1.col-md-10
+    - if @tasks.any?
+      table.table.table-bordered.table-condensed.table-striped.table-hover
+        thead
+          - %w(id name description state created_at).each do |column|
+            th= sort_link(@q, column, Task.human_attribute_name(column))
+          - if current_user.admin?
+            th= sort_link(@q, 'user_email', Task.human_attribute_name('user_email'))
+          th= link_to new_user_task_path do
+            = icon(:plus, class: 'fa-lg')
+        tbody
+          - @tasks.each do |task|
+            tr
+              td= task.id
+              td= task.name
+              td.col-md-2
+                .description
+                  = task.description
+              td= select('task', 'state', options_for_select(Task.aasm.states_for_select, task.state.to_s), { include_blank: false }, { class: 'task-state-select form-control', id: "task-state-select-#{task.id}" })
+              td= l(task.created_at, format: :full)
+              - if current_user.admin?
+                td= task.user.email
+              td.col-md-2
+                  .btn-group.btn-group-xs
+                    = link_to user_task_path(task), class: :btn do
+                      = icon(:info, class: 'fa-lg')
+                    = link_to  edit_user_task_path(task), class: :btn do
+                      = icon(:pencil, class: 'fa-lg')
+                    = link_to user_task_path(task), method: :delete, class: :btn, data: { confirm: t('.destroy_confirmation') } do
+                      = icon(:trash, class: 'fa-lg')
+      .text-center
+        = paginate @tasks, theme: 'twitter-bootstrap-3'
+    - else
+      .text-center= t('.no_tasks')
+      .text-center
+        = link_to t('.create_first_task'), new_user_task_path

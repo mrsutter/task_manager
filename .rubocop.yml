@@ -1,0 +1,12 @@
+require: 'rubocop-rspec'
+AllCops:
+  Exclude:
+    - 'bin/*'
+    - 'config/initializers/*'
+    - 'config/environments/*'
+    - 'db/schema.rb'
+    - 'spec/spec_helper.rb'
+Rails:
+  Enabled: true
+Documentation:
+  Enabled: false

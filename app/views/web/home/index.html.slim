@@ -1,0 +1,19 @@
+h4.text-center= t('.all_tasks')
+.row
+  .col-md-offset-2.col-md-8
+    - if @tasks.any?
+      table.table.table-bordered.table-condensed.table-striped.table-hover
+        thead
+          - %w(id name user_email created_at).each do |column|
+            th= sort_link(@q, column, Task.human_attribute_name(column))
+        tbody
+          - @tasks.each do |task|
+            tr
+              td= task.id
+              td= task.name
+              td= task.user.email
+              td= l(task.created_at, format: :full)
+      .text-center
+        = paginate @tasks, theme: 'twitter-bootstrap-3'
+    - else
+      .text-center= t('.no_tasks')

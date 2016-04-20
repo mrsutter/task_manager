@@ -1,0 +1,11 @@
+ru:
+  time:
+    formats:
+      full: '%d.%m.%Y %H:%M'
+  views:
+    pagination:
+      first: "Перв."
+      last: "Послед."
+      previous: "Предыд."
+      next: "След."
+      truncate: "&hellip;"

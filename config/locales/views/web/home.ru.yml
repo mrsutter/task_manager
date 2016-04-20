@@ -1,0 +1,6 @@
+ru:
+  web:
+    home:
+      index:
+        all_tasks: Все задачи
+        no_tasks: Пока не создано ни одной задачи

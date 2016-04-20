@@ -1,0 +1,19 @@
+ru:
+  web:
+    user:
+      tasks:
+        index:
+          all_tasks: Доступные задачи
+          no_tasks: Пока нет ни одной задачи
+          destroy_confirmation: Удалить задачу?
+          create_first_task: Создать
+        show:
+          task_title: 'Задача #%{task_id}'
+          edit: Редактировать
+          destroy: Удалить
+          destroy_confirmation: Удалить задачу?
+        form:
+          new_task: Новая задача
+          task_title: 'Задача #%{task_id}'
+          submit: Сохранить
+          assign_to: Назначить на

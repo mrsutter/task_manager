@@ -1,0 +1,42 @@
+ru:
+  activerecord:
+    models:
+      user:
+        one: Пользователь
+        other: Пользователи
+      task:
+        one: Задача
+        other: Задачи
+    attributes:
+      task:
+        id: Id
+        name: Название
+        description: Описание
+        state: Статус
+        file: Прикрепленный Файл
+        created_at: Время создания
+        user_email: Назначена на
+      user:
+        id: Id
+        email: Email
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        role: Роль
+        created_at: Создан
+    errors:
+      models:
+        task:
+          attributes:
+            name:
+              blank: Название не может быть пустым
+        user:
+          attributes:
+            email:
+              blank: Email не может быть пустым
+              taken: Email уже занят
+            password:
+              blank: Пароль не может быть пустым
+              too_short: Пароль должен содержать больше 5 символов
+            password_confirmation:
+              blank: Необходимо подтверждение пароля
+              confirmation: Пароли не совпадают
