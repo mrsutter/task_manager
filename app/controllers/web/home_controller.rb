@@ -3,6 +3,7 @@ class Web::HomeController < Web::ApplicationController
 
   def index
     @q = Task.ransack(params[:q])
+    @q.sorts = 'id asc' if @q.sorts.empty?
     @tasks = @q.result
                .includes(:user)
                .page(params[:page])
