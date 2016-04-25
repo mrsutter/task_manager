@@ -22,6 +22,7 @@ gem 'simple_form'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
 gem 'select2-rails'
+gem 'js-routes'
 
 gem 'config'
 
